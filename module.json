@@ -1,0 +1,22 @@
+{
+  "name": "daniel-compendium",
+  "title": "Daniel's Shiny New Compendium",
+  "description": "",
+  "author": "me",
+  "version": "0.0.0",
+  "minimumCoreVersion": "0.6.0",
+  "packs": [
+    {
+      "name": "daniel_pack1",
+      "label": "Daniel's Awesome Weapons Pack",
+      "path": "./packs/daniel-compendium_weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "daniel_pack2",
+      "label": "Daniel's Awesome Skills Pack",
+      "path": "./packs/daniel-compendium_skills.db",
+      "entity": "Item"
+    }
+  ]
+}
