@@ -2,7 +2,7 @@ name: zip-test
 on: [push]
 jobs:
   zip-up-files:
-    name: "Tagged Release"
+    name: "Testing release logic"
 
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +18,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Latest Build"
+          title: "Dev Build"
           files: |
             daniel-compendium.zip

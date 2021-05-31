@@ -6,7 +6,7 @@ on:
       - "v*" # If we tag a release with v0.0.whatever, create a release
 jobs:
   tagged-release:
-    name: "Tagged Release"
+    name: "Create Archived Zip for Tagged Release"
     runs-on: "ubuntu-latest"
 
     steps:
@@ -23,3 +23,4 @@ jobs:
           prerelease: false
           files: |
             daniel-compendium.zip
+            module.json
