@@ -5,6 +5,7 @@
   "author": "me",
   "version": "0.0.0",
   "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.7.10",
   "download": "https://github.com/tanglisha/daniel-compendium/releases/latest/download/daniel-compendium.zip",
   "manifest": "https://github.com/tanglisha/daniel-compendium/releases/latest/download/module.json",
   "packs": [
