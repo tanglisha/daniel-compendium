@@ -1,0 +1,42 @@
+name: zip
+on:
+  push:
+    tags:
+      - "v*" # If we tag a release with v0.0.whatever, create a release
+jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Archive Release
+        id: zip_archive
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: "daniel-compendium.zip"
+          exclusions: "*.git* .editorconfig"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            daniel-compendium.zip
+  zip-up-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Archive Release
+        id: zip_archive
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: "daniel-compendium.zip"
+          exclusions: "*.git* .editorconfig"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Latest Build"
+          files: |
+            daniel-compendium.zip
