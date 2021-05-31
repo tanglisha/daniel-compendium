@@ -1,14 +1,10 @@
----
-name: zip
-on:
-  push:
-    tags:
-      - "v*" # If we tag a release with v0.0.whatever, create a release
+name: zip-test
+on: [push]
 jobs:
-  tagged-release:
+  zip-up-files:
     name: "Tagged Release"
-    runs-on: "ubuntu-latest"
 
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Archive Release
@@ -20,6 +16,8 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Latest Build"
           files: |
             daniel-compendium.zip
