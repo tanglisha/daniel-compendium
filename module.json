@@ -21,5 +21,6 @@
       "path": "./packs/daniel-compendium_skills.db",
       "entity": "Item"
     }
-  ]
+  ],
+  "styles": ["styles/default.css"]
 }
